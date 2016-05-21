@@ -1,0 +1,203 @@
+
+$time-transition-brisk: 60ms;
+$time-transition-lasting: 600ms;
+
+body.frontpage {
+
+    background: url('/wp-content/themes/jng16/img/cover-2014-winter.jpg') center / cover fixed;
+}
+
+section.frontpage.links {
+
+    header.section {
+
+        h2 {
+
+            @include hide-text;
+        }
+    }
+
+    nav.section {
+
+        ul {
+
+            list-style: none;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            height: 0; // because fuck css
+            padding: 0 0 20%;
+        }
+
+        li {
+
+            margin: 0;
+            padding: 0;
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            height: 0; // seriously? in 2015?
+            padding: 1% 0 19%;
+        }
+
+        a.link {
+
+            @include hide-text;
+            height: 0; // becuse we still can't aspect ratio
+            border-radius: 50%;
+            z-index: 2;
+            position: relative;
+            transition: $time-transition-lasting all;
+            box-shadow: 0 .3rem .5rem fade-out($color-primary-black, .2);
+
+            width: 70%;
+            padding: 0 0 70%;
+
+            @media (max-width: $width-media-medium - 1) {
+
+                width: 80%;
+                padding: 0 0 80%;
+            }
+
+            @media (max-width: $width-media-small - 1) {
+
+                width: 90%;
+                padding: 0 0 90%;
+            }
+
+            &:hover {
+
+                transition: $time-transition-brisk all;
+                box-shadow: 0 .4rem .6rem fade-out($color-primary-black, .1);
+            }
+
+            &:after {
+
+                content: '';
+                position: absolute;
+                top: 15%;
+                right: 15%;
+                bottom: 15%;
+                left: 15%;
+                z-index: 1;
+                border-radius: 50%;
+                transition: $time-transition-lasting all;
+                background: no-repeat center center / auto 50%;
+            }
+
+            &:hover:after {
+
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                transition: $time-transition-brisk all;
+            }
+
+            &.facebook {
+
+                background-color: #3960ac;
+
+                &:hover {
+
+                    background-color: #3968c6;
+                }
+
+                &:after {
+
+                    background-image: url('/wp-content/themes/jng16/img/links-badge-facebook.png');
+                }
+            }
+
+            &.googleplus {
+
+                background-color: #ac3939;
+
+                &:hover {
+
+                    background-color: #c63939;
+                }
+
+                &:after {
+
+                    background-image: url('/wp-content/themes/jng16/img/links-badge-googleplus.png');
+                }
+            }
+
+            &.twitter {
+
+                background-color: #3999ac;
+
+                &:hover {
+
+                    background-color: #39aec6;
+                }
+
+                &:after {
+
+                    background-image: url('/wp-content/themes/jng16/img/links-badge-twitter.png');
+                }
+            }
+
+            &.rdio {
+
+                background-color: #4c39ac;
+
+                &:hover {
+
+                    background-color: #5139c6;
+                }
+
+                &:after {
+
+                    background-image: url('/wp-content/themes/jng16/img/links-badge-rdio.png');
+                }
+            }
+
+            &.linkedin {
+
+                background-color: #3973ac;
+
+                &:hover {
+
+                    background-color: #397fc6;
+                }
+
+                &:after {
+
+                    background-image: url('/wp-content/themes/jng16/img/links-badge-linkedin.png');
+                }
+            }
+        }
+    }
+}
+
+
+
+article.index.main {
+
+    article.post {
+
+        position: relative;
+
+        transition: all $time-transition-lasting;
+
+        &:hover {
+
+            transition: all $time-transition-brisk;
+        }
+
+        aside.action.post {
+
+            @include position-absolute-fill;
+
+            a.action {
+
+                @include position-absolute-fill;
+                @include hide-text;
+
+                background-color: transparent;
+            }
+        }
+    }
+}

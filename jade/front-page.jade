@@ -1,0 +1,33 @@
+- set_page_class('frontpage')
+- get_header()
+header.main.frontpage
+  .container
+    h1 Jack Gutteridge
+    h2 Leicester, UK
+section.main.frontpage.links
+  nav.section
+    .container
+      ul
+        li: a.link.facebook(href='https://www.facebook.com/jackgutteridge') Facebook
+        li: a.link.twitter(href='https://twitter.com/jng_uk') Twitter
+        li: a.link.rdio(href='http://www.rdio.com/people/jack7c4/') LastFM
+        li: a.link.googleplus(href='https://www.google.com/+JackGutteridgeUK') GitHub
+        li: a.link.linkedin(href='https://www.linkedin.com/in/jackgutteridge') LinkedIn
+aside.main.sidebar.frontpage
+  section.frontpage.latest.writing.sidebar
+    header.section
+      .container
+        h2 Latest writing
+    section.list.section
+      .container
+        - get_latest_writing_list()
+main
+  article.main.page.frontpage
+    section.page.frontpage.contact
+      header.section
+        .container
+          h2 Contact
+      section.section.content
+        .container
+          p Email me at #[a(href='mailto:jack@kingbrick.co.uk') jack@kingbrick.co.uk]. #[br]Alternatively, contact me through one of my social profiles.
+- get_footer()

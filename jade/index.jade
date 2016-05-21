@@ -1,0 +1,13 @@
+- get_header()
+- if (have_posts()) : the_post()
+  main
+    article.main.page
+      header.page
+        .container
+          h1!= get_the_title()
+      section.page.content
+        .container
+          - the_content()
+- else : go_do_error();
+- endif
+- get_footer()

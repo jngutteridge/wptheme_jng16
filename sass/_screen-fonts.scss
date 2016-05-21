@@ -1,0 +1,251 @@
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|PT+Sans);
+
+$font-primary: 'Source Sans Pro', 'Roboto', Helvetica, Arial, sans-serif;
+$font-secondary: 'PT Sans', 'Roboto Condensed', Helvetica, sans-serif;
+
+html {
+
+    font-size: 10px;
+
+    @media (min-width: $width-media-standard) {
+
+        font-size: 11px;
+    }
+
+    @media (min-width: $width-media-large) {
+
+        font-size: 12px;
+    }
+
+    @media (min-width: $width-media-wide) {
+
+        font-size: 14px;
+    }
+
+    @media (min-width: $width-media-stupid) {
+
+        font-size: 28px;
+    }
+
+    @media (max-width: $width-media-medium - 1) {
+
+        font-size: 9px;
+    }
+
+    @media (max-width: $width-media-narrow - 1) {
+
+        font-size: 8px;
+    }
+
+    @media (max-width: $width-media-small - 1) {
+
+        font-size: 7px;
+    }
+}
+
+body {
+
+    font-size: 1rem;
+
+    font-family: $font-primary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    line-height: 1.5;
+}
+
+p {
+
+	margin: 1.4em 0;
+}
+
+ul {
+
+	list-style: disc outside;
+	margin: 1.4em 0;
+    padding: 0 0 0 1.2em;
+
+	li {
+
+		margin: 0 0 0 1.4em;
+	}
+}
+
+ol {
+
+	list-style: decimal outside;
+	margin: 1.4em 0;
+    padding: 0 0 0 1.2em;
+
+	li {
+
+		margin: 0 0 0 1.4em;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: $font-secondary;
+    line-height: 1;
+    font-weight: normal;
+}
+
+h3,
+h4,
+h5,
+h6 {
+
+    margin: 2.4em 0 .4em;
+}
+
+h1 {
+
+
+    margin: 2em -.075em .8em; // align font properly when bigger
+	font-size: 3.2em;
+}
+
+h2 {
+
+
+    margin: 1.6em -.075em .4em; // align font properly when bigger
+	font-size: 2em;
+}
+
+h3 {
+
+	font-weight: bold;
+}
+
+blockquote {
+
+	margin-left: 2em;
+}
+
+a:link,
+a:visited {
+
+	text-decoration: none;
+}
+
+footer.main {
+
+	section {
+
+		&.notice {
+
+			text-align: center;
+
+			p {
+
+				margin: 0;
+            }
+		}
+	}
+}
+
+.content {
+
+    font-size: 1.6rem;
+
+    h1 {
+
+        @media (min-width: $width-media-large) {
+
+            font-size: 4em;
+        }
+    }
+
+    h2 {
+
+        @media (min-width: $width-media-large) {
+
+            font-size: 3em;
+        }
+    }
+}
+
+article.page {
+
+    font-size: 1.1em;
+
+    header.page {
+
+        font-size: 1.3em;
+    }
+
+    section.page {
+
+        header.section {
+
+            font-size: 1.5em;
+        }
+    }
+}
+
+article.article.page {
+
+    h1 {
+
+        @media (min-width: $width-media-large) {
+
+            font-size: 4em;
+        }
+    }
+
+    h2 {
+
+        @media (min-width: $width-media-large) {
+
+            font-size: 3em;
+        }
+    }
+}
+
+article.index.page {
+
+    article.post {
+
+        header.post {
+
+            //
+        }
+    }
+}
+
+header.frontpage.main {
+
+    font-size: 3.4em;
+
+    h1 {
+
+        font-size: 1.4em;
+    }
+
+    h2 {
+
+        font-size: .6em;
+    }
+}
+
+article.frontpage.main {
+
+    section.page {
+
+        header.section {
+
+            font-size: 1.1em;
+
+            @media (min-width: $width-media-large) {
+
+                font-size: 1.2em;
+            }
+        }
+    }
+}

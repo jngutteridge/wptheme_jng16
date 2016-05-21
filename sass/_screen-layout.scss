@@ -1,0 +1,231 @@
+
+$width-media-small: 420px;
+$width-media-narrow: 540px;
+$width-media-medium: 740px;
+$width-media-standard: 840px;
+$width-media-large: 1020px;
+$width-media-wide: 1400px;
+$width-media-stupid: 1800px;
+
+html {
+
+    height: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+
+	box-sizing: inherit;
+}
+
+
+body {
+
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+
+    display: block; // stupid IE11
+    min-height: 100%; // doesn't actually work. webkit bug?
+    flex-grow: 1;
+}
+
+footer.main {
+
+    padding: 1rem 0;
+}
+
+.container {
+
+    @include width-container-wide;
+    //height: 100%; // engulfs child margins
+}
+
+section.content {
+
+    br {
+
+        @media (max-width: $width-media-small - 1) {
+
+            display: none;
+        }
+    }
+
+    .container {
+
+        @include width-container-tight;
+    }
+}
+
+article.page {
+
+    header.page {
+
+        padding: 4rem 0;
+        text-align: center;
+
+        h1 {
+
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        h2 {
+
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+    }
+
+    aside.page {
+
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    section.page {
+
+        padding: 1px 0; // hack to engulf child margins
+
+        header.section {
+
+            padding: 1rem 0;
+
+            h1 {
+
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            h2 {
+
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    footer.end.page {
+
+        .container {
+
+            @include width-container-tight;
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+
+        text-align: center;
+    }
+}
+
+article.index.page {
+
+    article.post {
+
+        .container {
+
+            @include width-container-tight;
+        }
+
+        header.post {
+
+            text-align: center;
+
+            .container {
+
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            h1 {
+
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            h2 {
+
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            date {
+
+                display: block;
+                margin-top: 1em;
+            }
+        }
+    }
+
+    footer.end.page {
+
+        .container {
+
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+header.frontpage.main {
+
+    padding: 8rem 0 6rem;
+    text-align: center;
+
+    h1 {
+
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    h2 {
+
+        margin-top: .5em;
+        margin-bottom: 0;
+    }
+}
+
+section.frontpage.links.main {
+
+    padding: 8rem 0 1rem;
+
+    .container {
+
+        @include width-container-wide;
+    }
+}
+
+article.frontpage.main {
+
+    margin: 0;
+
+    .container {
+
+        @include width-container-tight;
+    }
+
+    section.page {
+
+        padding: 2rem 0 4rem;
+
+        header.section {
+
+            padding: 2rem 0 0;
+        }
+
+        &.contact {
+
+            text-align: center;
+        }
+    }
+}
+
+.home.frontpage > footer.main {
+
+    padding: 8rem 0 1rem;
+}

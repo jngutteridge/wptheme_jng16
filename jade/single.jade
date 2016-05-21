@@ -1,0 +1,16 @@
+- get_header()
+- if (have_posts()) : the_post()
+  main
+    article.article.page.main
+      header.page
+        .container
+          h1!= get_the_title()
+      aside.page
+        .container
+          date!= get_the_date()
+      section.content.page
+        .container
+          - the_content()
+- else : do_an_error()
+- endif
+- get_footer()
