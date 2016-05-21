@@ -2,20 +2,12 @@
 $time-transition-brisk: 60ms;
 $time-transition-lasting: 600ms;
 
-body.frontpage {
+header.main.frontpage {
 
-    background: url('/wp-content/themes/jng16/img/cover-2014-winter.jpg') center / cover fixed;
+    // background: url('/wp-content/themes/jng16/img/cover-2014-winter.jpg') center / cover;
 }
 
 section.frontpage.links {
-
-    header.section {
-
-        h2 {
-
-            @include hide-text;
-        }
-    }
 
     nav.section {
 
@@ -44,26 +36,13 @@ section.frontpage.links {
 
             @include hide-text;
             height: 0; // becuse we still can't aspect ratio
-            border-radius: 50%;
             z-index: 2;
             position: relative;
             transition: $time-transition-lasting all;
             box-shadow: 0 .3rem .5rem fade-out($color-primary-black, .2);
 
-            width: 70%;
-            padding: 0 0 70%;
-
-            @media (max-width: $width-media-medium - 1) {
-
-                width: 80%;
-                padding: 0 0 80%;
-            }
-
-            @media (max-width: $width-media-small - 1) {
-
-                width: 90%;
-                padding: 0 0 90%;
-            }
+            width: 95%;
+            padding: 0 0 95%;
 
             &:hover {
 
@@ -80,7 +59,6 @@ section.frontpage.links {
                 bottom: 15%;
                 left: 15%;
                 z-index: 1;
-                border-radius: 50%;
                 transition: $time-transition-lasting all;
                 background: no-repeat center center / auto 50%;
             }
@@ -166,6 +144,36 @@ section.frontpage.links {
                 &:after {
 
                     background-image: url('/wp-content/themes/jng16/img/links-badge-linkedin.png');
+                }
+            }
+
+            &.lastfm {
+
+                background-color: #ac3939;
+
+                &:hover {
+
+                    background-color: #c63939;
+                }
+
+                &:after {
+
+                    background-image: url('/wp-content/themes/jng16/img/links-badge-lastfm.png');
+                }
+            }
+
+            &.github {
+
+                background-color: #656565;
+
+                &:hover {
+
+                    background-color: #707070;
+                }
+
+                &:after {
+
+                    background-image: url('/wp-content/themes/jng16/img/links-badge-github.png');
                 }
             }
         }

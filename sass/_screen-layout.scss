@@ -154,7 +154,7 @@ article.index.page {
                 margin-bottom: 0;
             }
 
-            date {
+            time {
 
                 display: block;
                 margin-top: 1em;
@@ -192,8 +192,6 @@ header.frontpage.main {
 
 section.frontpage.links.main {
 
-    padding: 8rem 0 1rem;
-
     .container {
 
         @include width-container-wide;
@@ -211,7 +209,7 @@ article.frontpage.main {
 
     section.page {
 
-        padding: 2rem 0 4rem;
+        padding: 2rem 0;
 
         header.section {
 
@@ -228,4 +226,45 @@ article.frontpage.main {
 .home.frontpage > footer.main {
 
     padding: 8rem 0 1rem;
+}
+
+section.page.blogs {
+
+    ul {
+
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+
+        margin: 0;
+    }
+
+    @include width-container-wide;
+    @include pie-clearfix;
+
+    @media (min-width: $width-media-medium) {
+
+        section.blogs.frontpage.latest,
+        section.blogs.frontpage.links {
+
+            width: 50%;
+            float: left;
+        }
+    }
+}
+
+section.page.blog {
+
+    ul {
+
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+
+        margin: 0;
+    }
 }

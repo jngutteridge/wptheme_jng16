@@ -43,7 +43,19 @@ function get_latest_writing_list () {
 
     foreach ( $rps as $p )
 
-        echo '<li><a href="' . get_permalink($p->ID) . '">' . $p->post_title . '</a></li>';
+        echo '<li><a href="' . get_permalink($p->ID) . '">' . $p->post_title . ' / <time>' . date('jS F Y', strtotime($p->post_date)) . '</time></a></li>';
+
+    echo '</ul>';
+}
+
+function get_latest_links_list () {
+
+    echo '<ul>';
+
+        echo '<li><a href="#test">Test link</a></li>';
+        echo '<li><a href="#test">Test link</a></li>';
+        echo '<li><a href="#test">Test link</a></li>';
+        echo '<li><a href="#test">Test link</a></li>';
 
     echo '</ul>';
 }
@@ -60,7 +72,7 @@ function get_archive_index () {
         echo    '<header class="post">';
         echo        '<div class="container">';
         echo            '<h2><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h2>';
-        echo            '<date>' . get_the_date() . '</date>';
+        echo            '<time>' . get_the_date() . '</time>';
         echo        '</div>';
         echo    '</header>';
         echo    '<aside class="action post">';

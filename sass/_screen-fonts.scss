@@ -1,21 +1,21 @@
 
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|PT+Sans);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Montserrat);
 
-$font-primary: 'Source Sans Pro', 'Roboto', Helvetica, Arial, sans-serif;
-$font-secondary: 'PT Sans', 'Roboto Condensed', Helvetica, sans-serif;
+$font-primary: 'Roboto', Helvetica, Arial, sans-serif;
+$font-secondary: 'Montserrat', 'Roboto Condensed', Helvetica, sans-serif;
 
 html {
 
-    font-size: 10px;
+    font-size: 11px;
 
     @media (min-width: $width-media-standard) {
 
-        font-size: 11px;
+        font-size: 12px;
     }
 
     @media (min-width: $width-media-large) {
 
-        font-size: 12px;
+        font-size: 13px;
     }
 
     @media (min-width: $width-media-wide) {
@@ -25,22 +25,22 @@ html {
 
     @media (min-width: $width-media-stupid) {
 
-        font-size: 28px;
+        font-size: 22px;
     }
 
     @media (max-width: $width-media-medium - 1) {
 
-        font-size: 9px;
+        font-size: 13px;
     }
 
     @media (max-width: $width-media-narrow - 1) {
 
-        font-size: 8px;
+        font-size: 12px;
     }
 
     @media (max-width: $width-media-small - 1) {
 
-        font-size: 7px;
+        font-size: 11px;
     }
 }
 
