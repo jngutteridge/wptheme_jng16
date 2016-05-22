@@ -62,7 +62,7 @@ function get_latest_links_list () {
 
 function get_archive_index () {
 
-    $aps = new WP_Query([ 'post_type' => 'post' ]); // archive posts
+    $aps = new WP_Query([ 'post_type' => 'post', 'posts_per_page' => -1 ]); // archive posts
 
     while ($aps->have_posts()) :
 
