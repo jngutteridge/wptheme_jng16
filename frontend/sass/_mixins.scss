@@ -52,3 +52,10 @@
 
     @include width-container;
 }
+
+@mixin width-container-max {
+    @include width-container;
+
+    max-width: 100rem;
+    padding: 0;
+}

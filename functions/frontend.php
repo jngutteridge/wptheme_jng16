@@ -26,7 +26,6 @@ function set_page_class($class)
 function get_page_class()
 {
     global $jng_page_class;
-
     return isset ($jng_page_class) ? $jng_page_class : '';
 }
 
@@ -41,17 +40,27 @@ function get_footer_footer()
     echo '</html>';
 }
 
-function get_latest_writing_list()
+function get_latest_writing()
 {
-    $rps = wp_get_recent_posts ( null, OBJECT );
+    $posts = wp_get_recent_posts ( array('numberposts' => 5), OBJECT );
 
-    echo '<ul>';
+    foreach ($posts as $post) :
 
-    foreach ( $rps as $p )
+        echo '<article class="post page">';
+        echo    '<header class="post">';
+        echo        '<div class="container">';
+        echo            '<h2><a href="' . get_permalink($post->ID) . '">' . $post->post_title . '</a></h2>';
+        echo            '<time>' . date('jS F Y', strtotime($post->post_date)) . '</time>';
+        echo        '</div>';
+        echo    '</header>';
+        echo    '<aside class="action post">';
+        echo        '<div class="container">';
+        echo            '<a class="action" href="' . get_permalink($post->ID) . '">' . 'Read article' . '</a>';
+        echo        '</div>';
+        echo    '</aside>';
+        echo '</article>';
 
-        echo '<li><a href="' . get_permalink($p->ID) . '">' . $p->post_title . ' / <time>' . date('jS F Y', strtotime($p->post_date)) . '</time></a></li>';
-
-    echo '</ul>';
+    endforeach;
 }
 
 function get_archive_index()
@@ -79,4 +88,10 @@ function get_archive_index()
     endwhile;
 
     wp_reset_postdata();
+}
+
+function get_header_nav()
+{
+    if (get_page_class() !== 'frontpage')
+        get_template_part ('header-nav');
 }

@@ -25,8 +25,7 @@ body {
 }
 
 main {
-    display: block; // stupid IE11
-    min-height: 100%; // doesn't actually work. webkit bug?
+    display: block;
     flex-grow: 1;
 }
 
@@ -36,7 +35,36 @@ footer.main {
 
 .container {
     @include width-container-wide;
-    //height: 100%; // engulfs child margins
+}
+
+header.main {
+
+    .container {
+        @include width-container-max;
+    }
+
+    nav.header.main {
+
+        ul {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+
+            &.contact {
+                float: right;
+            }
+
+            li {
+                display: inline-block;
+                margin: 0;
+            }
+
+            a {
+                display: inline-block;
+                padding: 4px 8px;
+            }
+        }
+    }
 }
 
 section.content {
@@ -104,16 +132,16 @@ article.page {
     }
 }
 
-article.index.page {
+article.index {
 
     article.post {
 
         .container {
-            @include width-container-tight;
+            @include width-container;
         }
 
         header.post {
-            text-align: center;
+            text-align: left;
 
             .container {
                 padding-top: 2rem;
@@ -147,7 +175,7 @@ article.index.page {
 }
 
 header.frontpage.main {
-    padding: 8rem 0 6rem;
+    padding: 12rem 0 10rem;
     text-align: center;
 
     h1 {
@@ -172,18 +200,15 @@ article.frontpage.main {
     margin: 0;
 
     .container {
-        @include width-container-tight;
+        @include width-container;
     }
 
     section.page {
         padding: 2rem 0;
+        text-align: center;
 
         header.section {
             padding: 2rem 0 0;
-        }
-
-        &.contact {
-            text-align: center;
         }
     }
 }
