@@ -13,7 +13,8 @@ function get_header_header()
 
 function get_stylesheet_link()
 {
-    echo '<link rel="stylesheet" type="text/css" href="/wp-content/themes/jng16/css/screen.css" />';
+    $href = get_template_directory_uri();
+    echo '<link rel="stylesheet" type="text/css" href="' . $href . '/css/screen.css" />';
 }
 
 function set_page_class($class)
