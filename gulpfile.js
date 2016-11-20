@@ -1,7 +1,6 @@
 
 'use strict';
 
-
 var del           = require('del');
 var gulp          = require('gulp');
 var livereload    = require('gulp-livereload');
@@ -16,19 +15,15 @@ var notification  = require('node-notifier');
 var util          = require('gulp-util');
 var jade          = require('gulp-jade-php');
 
-
-function handleErr(err) {
-
+function handleErr(err)
+{
     notification.notify({ title: 'Gulp Error', sound: true, message: err.message });
     util.log(util.colors.red('Gulp Error:'), err.message);
-//gulp.src('./*.php').pipe(livereload());
     this.emit('end');
 }
 
-
-gulp.task('default', [ 'clean' ], function () {
-
-    //gulp.start('build');
+gulp.task('default', [ 'clean' ], function ()
+{
     gulp.start('watch');
 });
 
@@ -38,51 +33,41 @@ gulp.task('build', [ 'build-css', 'build-php' ]);
 
 gulp.task('build-dev', [ 'build-dev-css', 'build-dev-php' ]);
 
-gulp.task('watch', [ 'build-dev' ], function () {
-
+gulp.task('watch', [ 'build-dev' ], function ()
+{
     livereload.listen();
-    watch([ './sass/*.scss' ], function () { gulp.start('build-dev-css'); });
-    watch([ './jade/*.jade', './php/*.php' ], function () { gulp.start('build-dev-php'); });
+    watch([ './frontend/sass/*.scss' ],  { usePolling: true }, function () { gulp.start('build-dev-css'); });
+    watch([ './frontend/jade/*.jade' ],  { usePolling: true }, function () { gulp.start('build-dev-php'); });
 });
 
-
-gulp.task('clean-css', function () {
-
+gulp.task('clean-css', function ()
+{
     return del([ './css/*' ]);
 });
 
-gulp.task('clean-php', function () {
-
+gulp.task('clean-php', function ()
+{
     return del([ './*.php' ]);
 });
 
-
-gulp.task('deploy-php', [ 'clean-php' ], function () {
-
-    return gulp.src(['./php/*.php', '!./php/_*.php'])
-        .pipe(gulp.dest('./'));
-});
-
-
-gulp.task('build-css', function () {
-
-    return gulp.src('./sass/screen.scss')
+gulp.task('build-css', function ()
+{
+    return gulp.src('./frontend/sass/screen.scss')
         .pipe(sass())
         .pipe(postcss([ pixrem, autoprefixer, csswring ]))
         .pipe(gulp.dest('./css'));
 });
 
-gulp.task('build-php', [ 'deploy-php' ], function () {
-
-    return gulp.src('./jade/*.jade')
+gulp.task('build-php', [ 'clean-php' ], function ()
+{
+    return gulp.src('./frontend/jade/*.jade')
         .pipe(jade())
         .pipe(gulp.dest('./'));
 });
 
-
-gulp.task('build-dev-css', [ 'clean-css' ], function () {
-
-    return gulp.src('./sass/screen.scss')
+gulp.task('build-dev-css', [ 'clean-css' ], function ()
+{
+    return gulp.src('./frontend/sass/screen.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }))
         .on('error', handleErr)
@@ -91,9 +76,9 @@ gulp.task('build-dev-css', [ 'clean-css' ], function () {
         .pipe(livereload());
 });
 
-gulp.task('build-dev-php', [ 'deploy-php' ], function () {
-
-    return gulp.src('./jade/*.jade')
+gulp.task('build-dev-php', [ 'clean-php' ], function ()
+{
+    return gulp.src('./frontend/jade/*.jade')
         .pipe(jade({ pretty: true }))
         .on('error', handleErr)
         .pipe(gulp.dest('./'))

@@ -1,42 +1,47 @@
 <?php
 
-function get_website_title() {
-
+function get_website_title()
+{
     return wp_title('/', false, 'right') . 'Jack Gutteridge';
 }
 
-function get_header_header () {
-
+function get_header_header()
+{
     echo '<!DOCTYPE html>';
     echo '<html>';
 }
 
-function set_page_class ($class) {
+function get_stylesheet_link()
+{
+    echo '<link rel="stylesheet" type="text/css" href="/wp-content/themes/jng16/css/screen.css" />';
+}
 
+function set_page_class($class)
+{
     global $jng_page_class;
     $jng_page_class = $class;
 }
 
-function get_page_class () {
-
+function get_page_class()
+{
     global $jng_page_class;
 
     return isset ($jng_page_class) ? $jng_page_class : '';
 }
 
-function get_header_footer () {
-
+function get_header_footer()
+{
     echo '<body class="' . join ( ' ', get_body_class (get_page_class()) ) . '">';
 }
 
-function get_footer_footer () {
-
+function get_footer_footer()
+{
     echo '</body>';
     echo '</html>';
 }
 
-function get_latest_writing_list () {
-
+function get_latest_writing_list()
+{
     $rps = wp_get_recent_posts ( null, OBJECT );
 
     echo '<ul>';
@@ -48,20 +53,8 @@ function get_latest_writing_list () {
     echo '</ul>';
 }
 
-function get_latest_links_list () {
-
-    echo '<ul>';
-
-        echo '<li><a href="#test">Test link</a></li>';
-        echo '<li><a href="#test">Test link</a></li>';
-        echo '<li><a href="#test">Test link</a></li>';
-        echo '<li><a href="#test">Test link</a></li>';
-
-    echo '</ul>';
-}
-
-function get_archive_index () {
-
+function get_archive_index()
+{
     $aps = new WP_Query([ 'post_type' => 'post', 'posts_per_page' => -1 ]); // archive posts
 
     while ($aps->have_posts()) :

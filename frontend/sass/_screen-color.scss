@@ -195,15 +195,6 @@ article.frontpage.main {
     color: $color-primary-white;
     text-shadow: 0 .1rem .3rem fade-out($color-primary-black, .2);
     background-color: fade-out($color-primary-black, .3);
-
-    .content {
-
-        a:link,
-        a:visited {
-
-            color: $color-primary-screen;
-        }
-    }
 }
 
 //.home.frontpage > footer.main {

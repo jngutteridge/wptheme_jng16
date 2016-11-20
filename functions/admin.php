@@ -1,21 +1,7 @@
 <?php
 
-function set_menus() {
-
-    //register_nav_menu('header', 'Header Navigation');
-    //register_nav_menu('footer', 'Footer Navigation');
-}
-
-//add_theme_support('post-thumbnails');
-
-//add_image_size('banner', 1260, 520, false);
-//add_image_size('slide-full', 1280, 330, true);
-//add_image_size('gallery-full', 880, 495);
-//add_image_size('gallery-thumb', 200, 110, true);
-
-
-function add_post_slug_template($templates) {
-
+function add_post_slug_template($templates)
+{
     $templates = array($templates);
 
     $object = get_queried_object();
@@ -27,18 +13,18 @@ function add_post_slug_template($templates) {
     return locate_template($templates);
 }
 
-function intercept_template_hierarchy() {
-
+function intercept_template_hierarchy()
+{
     add_filter( 'single_template', 'add_post_slug_template', 10, 1 );
 }
 
-function complete_version_removal() {
-
+function complete_version_removal()
+{
     return '';
 }
 
-function style_admin_bar () {
-
+function style_admin_bar()
+{
     if ( is_admin_bar_showing() && !current_user_can('update_core') ) :
 
         echo '<style type="text/css">';
@@ -64,23 +50,8 @@ function style_admin_bar () {
     endif;
 }
 
-function degreelessness_mode() {
-
-    $url = 'http://bespokemedia.net/js/degreelessness-mode.js';
-
-    //if ( is_admin_bar_showing() ) :
-
-        echo '<script type="text/javascript" src='. $url . '></script>';
-
-    if ( is_admin_bar_showing() && current_user_can('update_core') ) :
-
-        degreelessness_mode_dev();
-
-    endif;
-}
-
-function set_admin_post_order($wp_query) {
-
+function set_admin_post_order($wp_query)
+{
     global $pagenow;
 
     if ( is_admin() && 'edit.php' == $pagenow && !isset($_GET['orderby']) ) {
@@ -88,11 +59,4 @@ function set_admin_post_order($wp_query) {
         $wp_query->set( 'orderby', 'date' );
         $wp_query->set( 'order', 'DSC' );
     }
-}
-
-
-function remove_unneeded_admin_menus() {
-
-    //remove_menu_page('edit-comments.php');
-    //remove_menu_page('edit.php');
 }
