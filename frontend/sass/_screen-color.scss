@@ -2,6 +2,7 @@ $hue-primary: 200;
 
 $color-primary:            hsl($hue-primary, 66%, 30%);
 $color-primary-black: 	   hsl($hue-primary, 5%, 4%);
+$color-primary-darker:     hsl($hue-primary, 66%, 18%);
 $color-primary-dark:       hsl($hue-primary, 66%, 25%);
 $color-primary-grey:       hsl($hue-primary + 10, 40%, 25%);
 $color-primary-anchor:     hsl($hue-primary - 10, 66%, 40%);
@@ -148,7 +149,7 @@ article.index.page {
 header.frontpage.main {
     color: $color-primary-white;
     text-shadow: 0 .1rem .3rem fade-out($color-primary-black, .2);
-    background-color: $color-primary-dark;
+    background-color: $color-primary-darker;
 }
 
 aside.frontpage.main {
