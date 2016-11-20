@@ -1,31 +1,32 @@
 - set_page_class('frontpage')
 - get_header()
 header.main.frontpage
-  .container
-    h1 Jack Gutteridge
-    h2 Leicester, UK
-section.main.frontpage.links
-  nav.section
     .container
-      ul
-        li: a.link.facebook(href='https://www.facebook.com/jackgutteridge',target='_blank') Facebook
-        li: a.link.twitter(href='https://twitter.com/jngutteridge',target='_blank') Twitter
-        li: a.link.lastfm(href='http://www.last.fm/user/madnessjack',target='_blank') LastFM
-        li: a.link.github(href='https://github.com/jngutteridge',target='_blank') GitHub
-        li: a.link.linkedin(href='https://www.linkedin.com/in/jackgutteridge',target='_blank') LinkedIn
+        h1 Jack Gutteridge
+        h2 Leicester, UK
+section.main.frontpage.links
+    nav.section
+        .container
+            ul
+                li: a.link.facebook(href='https://www.facebook.com/jackgutteridge',target='_blank') Facebook
+                li: a.link.twitter(href='https://twitter.com/jngutteridge',target='_blank') Twitter
+                li: a.link.lastfm(href='http://www.last.fm/user/madnessjack',target='_blank') LastFM
+                li: a.link.github(href='https://github.com/jngutteridge',target='_blank') GitHub
+                li: a.link.linkedin(href='https://www.linkedin.com/in/jackgutteridge',target='_blank') LinkedIn
+main
+    article.main.page.frontpage.index
+        header.page
+            .container
+                h2 Latest writing
+        - get_latest_writing()
 article.main.page.frontpage
-  section.page.frontpage.blog
-    header.section
-      .container
-        h2 Latest writing
-    section.section.content
-      .container
-        - get_latest_writing_list()
-  section.page.frontpage.contact
-    header.section
-      .container
-        h2 Contact
-    section.section.content
-      .container
-        p Email me at #[a(href='mailto:jack@kingbrick.co.uk') jack@kingbrick.co.uk]. #[br]Alternatively, contact me through one of my social profiles.
+    section.page.frontpage.contact
+        header.section
+            .container
+                h2 Contact
+        section.section.content
+            .container
+                p Email me at #[a(href='mailto:jack@kingbrick.co.uk') jack@kingbrick.co.uk]. #[br]Alternatively, contact me through one of my social profiles.
 - get_footer()
+- set_page_class('')
+- get_header_nav()

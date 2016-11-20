@@ -1,4 +1,3 @@
-
 $width-media-small: 420px;
 $width-media-narrow: 540px;
 $width-media-medium: 740px;
@@ -8,7 +7,6 @@ $width-media-wide: 1400px;
 $width-media-stupid: 1800px;
 
 html {
-
     height: 100%;
 	box-sizing: border-box;
 }
@@ -16,34 +14,57 @@ html {
 *,
 *:before,
 *:after {
-
 	box-sizing: inherit;
 }
 
 
 body {
-
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 main {
-
-    display: block; // stupid IE11
-    min-height: 100%; // doesn't actually work. webkit bug?
+    display: block;
     flex-grow: 1;
 }
 
 footer.main {
-
     padding: 1rem 0;
 }
 
 .container {
-
     @include width-container-wide;
-    //height: 100%; // engulfs child margins
+}
+
+header.main {
+
+    .container {
+        @include width-container-max;
+    }
+
+    nav.header.main {
+
+        ul {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+
+            &.contact {
+                float: right;
+            }
+
+            li {
+                display: inline-block;
+                margin: 0;
+            }
+
+            a {
+                display: inline-block;
+                padding: 4px 8px;
+            }
+        }
+    }
 }
 
 section.content {
@@ -51,13 +72,11 @@ section.content {
     br {
 
         @media (max-width: $width-media-small - 1) {
-
             display: none;
         }
     }
 
     .container {
-
         @include width-container-tight;
     }
 }
@@ -65,45 +84,37 @@ section.content {
 article.page {
 
     header.page {
-
         padding: 4rem 0;
         text-align: center;
 
         h1 {
-
             margin-top: 0;
             margin-bottom: 0;
         }
 
         h2 {
-
             margin-top: 1rem;
             margin-bottom: 0;
         }
     }
 
     aside.page {
-
         padding: 1rem 0;
         text-align: center;
     }
 
     section.page {
-
         padding: 1px 0; // hack to engulf child margins
 
         header.section {
-
             padding: 1rem 0;
 
             h1 {
-
                 margin-top: 0;
                 margin-bottom: 0;
             }
 
             h2 {
-
                 margin-top: 0;
                 margin-bottom: 0;
             }
@@ -113,49 +124,41 @@ article.page {
     footer.end.page {
 
         .container {
-
             @include width-container-tight;
             padding-top: 1px;
             padding-bottom: 1px;
         }
-
         text-align: center;
     }
 }
 
-article.index.page {
+article.index {
 
     article.post {
 
         .container {
-
-            @include width-container-tight;
+            @include width-container;
         }
 
         header.post {
-
-            text-align: center;
+            text-align: left;
 
             .container {
-
                 padding-top: 2rem;
                 padding-bottom: 2rem;
             }
 
             h1 {
-
                 margin-top: 0;
                 margin-bottom: 0;
             }
 
             h2 {
-
                 margin-top: 0;
                 margin-bottom: 0;
             }
 
             time {
-
                 display: block;
                 margin-top: 1em;
             }
@@ -165,7 +168,6 @@ article.index.page {
     footer.end.page {
 
         .container {
-
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
@@ -173,18 +175,15 @@ article.index.page {
 }
 
 header.frontpage.main {
-
-    padding: 8rem 0 6rem;
+    padding: 12rem 0 10rem;
     text-align: center;
 
     h1 {
-
         margin-top: 0;
         margin-bottom: 0;
     }
 
     h2 {
-
         margin-top: .5em;
         margin-bottom: 0;
     }
@@ -193,51 +192,39 @@ header.frontpage.main {
 section.frontpage.links.main {
 
     .container {
-
         @include width-container-wide;
     }
 }
 
 article.frontpage.main {
-
     margin: 0;
 
     .container {
-
-        @include width-container-tight;
+        @include width-container;
     }
 
     section.page {
-
         padding: 2rem 0;
+        text-align: center;
 
         header.section {
-
             padding: 2rem 0 0;
-        }
-
-        &.contact {
-
-            text-align: center;
         }
     }
 }
 
 .home.frontpage > footer.main {
-
     padding: 8rem 0 1rem;
 }
 
 section.page.blogs {
 
     ul {
-
         list-style: none;
         padding: 0;
     }
 
     li {
-
         margin: 0;
     }
 
@@ -248,7 +235,6 @@ section.page.blogs {
 
         section.blogs.frontpage.latest,
         section.blogs.frontpage.links {
-
             width: 50%;
             float: left;
         }
@@ -258,13 +244,11 @@ section.page.blogs {
 section.page.blog {
 
     ul {
-
         list-style: none;
         padding: 0;
     }
 
     li {
-
         margin: 0;
     }
 }

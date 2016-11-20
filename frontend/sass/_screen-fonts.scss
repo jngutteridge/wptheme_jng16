@@ -1,4 +1,3 @@
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Montserrat);
 
 $font-primary: 'Roboto', Helvetica, Arial, sans-serif;
@@ -9,43 +8,35 @@ html {
     font-size: 11px;
 
     @media (min-width: $width-media-standard) {
-
         font-size: 12px;
     }
 
     @media (min-width: $width-media-large) {
-
         font-size: 13px;
     }
 
     @media (min-width: $width-media-wide) {
-
         font-size: 14px;
     }
 
     @media (min-width: $width-media-stupid) {
-
         font-size: 16px;
     }
 
     @media (max-width: $width-media-medium - 1) {
-
         font-size: 13px;
     }
 
     @media (max-width: $width-media-narrow - 1) {
-
         font-size: 12px;
     }
 
     @media (max-width: $width-media-small - 1) {
-
         font-size: 11px;
     }
 }
 
 body {
-
     font-size: 1rem;
 
     font-family: $font-primary;
@@ -56,30 +47,25 @@ body {
 }
 
 p {
-
 	margin: 1.4em 0;
 }
 
 ul {
-
 	list-style: disc outside;
 	margin: 1.4em 0;
     padding: 0 0 0 1.2em;
 
 	li {
-
 		margin: 0 0 0 1.4em;
 	}
 }
 
 ol {
-
 	list-style: decimal outside;
 	margin: 1.4em 0;
     padding: 0 0 0 1.2em;
 
 	li {
-
 		margin: 0 0 0 1.4em;
 	}
 }
@@ -90,7 +76,6 @@ h3,
 h4,
 h5,
 h6 {
-
     font-family: $font-secondary;
     line-height: 1;
     font-weight: normal;
@@ -100,37 +85,29 @@ h3,
 h4,
 h5,
 h6 {
-
     margin: 2.4em 0 .4em;
 }
 
 h1 {
-
-
     margin: 2em -.075em .8em; // align font properly when bigger
 	font-size: 3.2em;
 }
 
 h2 {
-
-
     margin: 1.6em -.075em .4em; // align font properly when bigger
 	font-size: 2em;
 }
 
 h3 {
-
 	font-weight: bold;
 }
 
 blockquote {
-
 	margin-left: 2em;
 }
 
 a:link,
 a:visited {
-
 	text-decoration: none;
 }
 
@@ -143,7 +120,6 @@ footer.main {
 			text-align: center;
 
 			p {
-
 				margin: 0;
             }
 		}
@@ -151,13 +127,11 @@ footer.main {
 }
 
 .content {
-
     font-size: 1.6rem;
 
     h1 {
 
         @media (min-width: $width-media-large) {
-
             font-size: 4em;
         }
     }
@@ -165,25 +139,21 @@ footer.main {
     h2 {
 
         @media (min-width: $width-media-large) {
-
             font-size: 3em;
         }
     }
 }
 
 article.page {
-
     font-size: 1.1em;
 
     header.page {
-
         font-size: 1.3em;
     }
 
     section.page {
 
         header.section {
-
             font-size: 1.5em;
         }
     }
@@ -194,7 +164,6 @@ article.article.page {
     h1 {
 
         @media (min-width: $width-media-large) {
-
             font-size: 4em;
         }
     }
@@ -202,34 +171,19 @@ article.article.page {
     h2 {
 
         @media (min-width: $width-media-large) {
-
             font-size: 3em;
         }
     }
 }
 
-article.index.page {
-
-    article.post {
-
-        header.post {
-
-            //
-        }
-    }
-}
-
 header.frontpage.main {
-
     font-size: 3.4em;
 
     h1 {
-
-        font-size: 1.4em;
+        font-size: 2.4em;
     }
 
     h2 {
-
         font-size: .6em;
     }
 }
@@ -239,11 +193,9 @@ article.frontpage.main {
     section.page {
 
         header.section {
-
             font-size: 1.1em;
 
             @media (min-width: $width-media-large) {
-
                 font-size: 1.2em;
             }
         }

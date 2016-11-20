@@ -1,8 +1,8 @@
-
 $hue-primary: 200;
 
 $color-primary:            hsl($hue-primary, 66%, 30%);
 $color-primary-black: 	   hsl($hue-primary, 5%, 4%);
+$color-primary-darker:     hsl($hue-primary, 66%, 18%);
 $color-primary-dark:       hsl($hue-primary, 66%, 25%);
 $color-primary-grey:       hsl($hue-primary + 10, 40%, 25%);
 $color-primary-anchor:     hsl($hue-primary - 10, 66%, 40%);
@@ -12,13 +12,11 @@ $color-primary-lighter:    hsl($hue-primary - 10, 25%, 90%);
 $color-primary-white: 	   hsl($hue-primary, 5%, 96%);
 
 html {
-
 	background-color: $color-primary-black;
     color: $color-primary-white;
 }
 
 hr {
-
     border: 0;
     border-top: .2em solid $color-primary;
     margin: 5em 0;
@@ -26,19 +24,16 @@ hr {
 
 a:link,
 a:visited {
-
     color: $color-primary-anchor;
 }
 
 
 a.action {
-
     background-color: $color-primary;
     color: white;
     transition: color 500ms, background-color 650ms;
 
     &:hover {
-
         background-color: $color-primary-anchor;
         color: rgb(232, 242, 250);
         transition: color 500ms, background-color 100ms;
@@ -47,101 +42,87 @@ a.action {
 
 
 header.main {
-
-    background-color: $color-primary-white;
+    background-color: $color-primary-black;
 
     &.main {
-
-        color: $color-primary;
+        color: $color-primary-white;
 
         a:link,
         a:visited {
+            color: $color-primary-white;
+            transition: color 500ms;
 
-            color: $color-primary;
-        }
-
-        .title {
-
-            color: $color-primary;
+            &:hover {
+                color: $color-primary;
+                transition: color 50ms;
+            }
         }
     }
 }
 
 footer.main {
-
     color: $color-primary-white;
 }
 
 
 article.page {
-
     color: $color-primary-black;
     background-color: $color-primary-white;
 
     header.page {
-
-        background-color: $color-primary;
+        background-color: $color-primary-dark;
         color: $color-primary-white;
     }
 
     aside.page {
-
         background-color: $color-primary-dark;
         color: $color-primary-white;
     }
 }
 
-article.index.page {
+article.index {
 
     article.post {
-
-        text-shadow: 0 .1rem .4rem $color-primary-white;
+        text-shadow: 0 .1rem .4rem $color-primary-black;
+        background-color: $color-primary-darker;
+        color: $color-primary-white;
+        
+        a:link,
+        a:visited {
+            color: $color-primary-white;
+        }
 
         &:hover {
-
-            background-color: $color-primary-lighter;
+            background-color: $color-primary-dark;
         }
 
         header.post {
-
-            .container {
-
-                border-top: 1px solid $color-primary-light;
-            }
+            border-top: 1px solid $color-primary-dark;
         }
     }
 
     footer.end.page {
-
-        .container {
-
-            border-top: 1px solid $color-primary-light;
-        }
+        border-top: 1px solid $color-primary-light;
     }
 }
 
 .content {
 
-	date,
     em {
-
 		color: $color-primary-grey;
 	}
 
 	h1,
 	h2,
 	h3 {
-
 		color: $color-primary;
 
 		a:link,
 		a:visited {
-
 			color: $color-primary;
 			transition: color 650ms;
 
 			&:hover {
-
 				color: $color-primary-anchor;
 				transition: color 100ms;
 			}
@@ -149,27 +130,19 @@ article.index.page {
 	}
 
 	blockquote {
-
 		color: $color-primary-grey;
 
 		padding-left: 2em;
-		border-left-color: $color-primary;
-		border-left-width: .2em;
-		border-left-style: solid;
+        border-left: $color-primary solid .2em;
 	}
 
 	a:link,
 	a:visited {
-
 		color: $color-primary-anchor;
-		border-bottom-style: solid;
-		border-bottom-width: 0.1em;
-
-		border-bottom-color: rgba($color-primary-grey, .4);
+		border-bottom: rgba($color-primary-grey, .4) solid 0.1em;
 		transition: border-bottom-color 400ms;
 
 		&:hover {
-
 			transition: border-bottom-color 80ms;
 			border-bottom-color: rgba($color-primary-anchor, .8);
 		}
@@ -177,30 +150,26 @@ article.index.page {
 }
 
 header.frontpage.main {
-
     color: $color-primary-white;
     text-shadow: 0 .1rem .3rem fade-out($color-primary-black, .2);
-    background-color: $color-primary-dark;
+    background-color: $color-primary-black;
 }
 
 aside.frontpage.main {
+  color: $color-primary-black;
+  text-shadow: 0 .1rem .3rem fade-out($color-primary-white, .2);
+  background-color: $color-primary-darker;
+}
 
-    color: $color-primary-black;
-    text-shadow: 0 .1rem .3rem fade-out($color-primary-white, .2);
-    background-color: fade-out($color-primary-white, .3);
+section.frontpage.main.links {
+  color: $color-primary-black;
+  text-shadow: 0 .1rem .3rem fade-out($color-primary-white, .2);
+  background-color: $color-primary-darker;
 }
 
 article.frontpage.main {
-
     color: $color-primary-white;
     text-shadow: 0 .1rem .3rem fade-out($color-primary-black, .2);
-    background-color: fade-out($color-primary-black, .3);
+    background-color: $color-primary-black;
 }
-
-//.home.frontpage > footer.main {
-//
-//    color: $color-primary-black;
-//    text-shadow: 0 .1rem .3rem fade-out($color-primary-white, .8);
-//    background-color: fade-out($color-primary-white, .7);
-//}
 
