@@ -57,6 +57,11 @@ header.main {
                 transition: color 50ms;
             }
         }
+
+        .profiles a:link,
+        .profiles a:visited {
+            opacity: .6;
+        }
     }
 }
 

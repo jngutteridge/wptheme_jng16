@@ -42,7 +42,13 @@ function get_footer_footer()
 
 function get_latest_writing()
 {
-    $posts = wp_get_recent_posts ( array('numberposts' => 5), OBJECT );
+    $posts = wp_get_recent_posts (
+        array(
+            'numberposts' => 5,
+            'post_status' => 'publish'
+        ),
+        OBJECT
+    );
 
     foreach ($posts as $post) :
 
