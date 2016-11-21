@@ -54,6 +54,12 @@ header.main {
                 float: right;
             }
 
+            &.profiles {
+                @media (max-width: $width-media-medium - 1) {
+                    display: none;
+                }
+            }
+
             li {
                 display: inline-block;
                 margin: 0;
