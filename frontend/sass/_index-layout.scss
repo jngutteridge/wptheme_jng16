@@ -1,0 +1,42 @@
+
+article.index {
+
+    article.post {
+
+        .container {
+            @include width-container;
+        }
+
+        header.post {
+            text-align: left;
+
+            .container {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            h1 {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            h2 {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            time {
+                display: block;
+                margin-top: 1em;
+            }
+        }
+    }
+
+    footer.end {
+
+        .container {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+}

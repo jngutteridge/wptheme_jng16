@@ -1,0 +1,24 @@
+
+article.index {
+
+    article.post {
+        position: relative;
+
+        transition: all $time-transition-lasting;
+
+        &:hover {
+            transition: all $time-transition-brisk;
+        }
+
+        aside.action.post {
+            @include position-absolute-fill;
+
+            a.action {
+                @include position-absolute-fill;
+                @include hide-text;
+
+                background-color: transparent;
+            }
+        }
+    }
+}

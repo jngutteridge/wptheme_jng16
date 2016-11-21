@@ -2,7 +2,17 @@
 @import "normalize";
 @import "mixins";
 
-@import "screen-layout";
-@import "screen-color";
-@import "screen-fonts";
-@import "screen-images";
+@import "global-layout";
+@import "global-color";
+@import "global-fonts";
+@import "global-images";
+
+@import "front-page-layout";
+@import "front-page-color";
+@import "front-page-fonts";
+@import "front-page-images";
+
+@import "index-layout";
+@import "index-color";
+@import "index-fonts";
+@import "index-images";

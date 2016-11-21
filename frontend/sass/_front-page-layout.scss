@@ -1,0 +1,36 @@
+
+header.frontpage {
+    padding: 12rem 0 10rem;
+    text-align: center;
+
+    .container {
+        @include width-container-wide;
+    }
+
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    h2 {
+        margin-top: .5em;
+        margin-bottom: 0;
+    }
+}
+
+section.frontpage.links {
+
+    .container {
+        @include width-container-max;
+    }
+}
+
+article.frontpage,
+section.frontpage {
+
+    text-align: center;
+
+    h2 {
+        margin-bottom: .8em;
+    }
+}
