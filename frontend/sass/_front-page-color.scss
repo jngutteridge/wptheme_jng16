@@ -1,0 +1,22 @@
+
+header.frontpage.main {
+    color: $color-primary-white;
+    text-shadow: 0 .1rem .3rem fade-out($color-primary-black, .2);
+    background-color: $color-primary-black;
+}
+
+section.frontpage.main.links {
+    color: $color-primary-white;
+    text-shadow: 0 .1rem .3rem fade-out($color-primary-white, .2);
+    background-color: $color-primary-black;
+}
+
+article.frontpage.main {
+    color: $color-primary-white;
+    text-shadow: 0 .1rem .3rem fade-out($color-primary-black, .2);
+    background-color: $color-primary-black;
+
+    header.article {
+        background-color: $color-primary-black;
+    }
+}

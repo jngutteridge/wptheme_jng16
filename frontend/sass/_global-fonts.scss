@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Montserrat);
 
-$font-primary: 'Roboto', Helvetica, Arial, sans-serif;
-$font-secondary: 'Montserrat', 'Roboto Condensed', Helvetica, sans-serif;
+$font-body: 'Roboto', Helvetica, Arial, sans-serif;
+$font-heading: 'Montserrat', 'Roboto Condensed', Helvetica, sans-serif;
 
 html {
 
@@ -39,11 +39,11 @@ html {
 body {
     font-size: 1rem;
 
-    font-family: $font-primary;
+    font-family: $font-body;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 p {
@@ -76,8 +76,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $font-secondary;
-    line-height: 1;
+    font-family: $font-heading;
+    line-height: 1.2;
     font-weight: normal;
 }
 
@@ -131,7 +131,7 @@ header.main {
 }
 
 .content {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 
     h1 {
 
@@ -176,40 +176,6 @@ article.article.page {
 
         @media (min-width: $width-media-large) {
             font-size: 3em;
-        }
-    }
-}
-
-header.frontpage.main {
-    font-size: 3.4em;
-
-    h1 {
-        font-size: 1.4em;
-
-        @media (min-width: $width-media-medium) {
-            font-size: 1.8em;
-        }
-
-        @media (min-width: $width-media-large) {
-            font-size: 2.4em;
-        }
-    }
-
-    h2 {
-        font-size: .6em;
-    }
-}
-
-article.frontpage.main {
-
-    section.page {
-
-        header.section {
-            font-size: 1.1em;
-
-            @media (min-width: $width-media-large) {
-                font-size: 1.2em;
-            }
         }
     }
 }

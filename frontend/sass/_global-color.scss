@@ -85,32 +85,6 @@ article.page {
     }
 }
 
-article.index {
-
-    article.post {
-        text-shadow: 0 .1rem .4rem $color-primary-black;
-        background-color: $color-primary-darker;
-        color: $color-primary-white;
-        
-        a:link,
-        a:visited {
-            color: $color-primary-white;
-        }
-
-        &:hover {
-            background-color: $color-primary-dark;
-        }
-
-        header.post {
-            border-top: 1px solid $color-primary-dark;
-        }
-    }
-
-    footer.end.page {
-        border-top: 1px solid $color-primary-light;
-    }
-}
-
 .content {
 
     em {
@@ -152,29 +126,5 @@ article.index {
 			border-bottom-color: rgba($color-primary-anchor, .8);
 		}
 	}
-}
-
-header.frontpage.main {
-    color: $color-primary-white;
-    text-shadow: 0 .1rem .3rem fade-out($color-primary-black, .2);
-    background-color: $color-primary-black;
-}
-
-aside.frontpage.main {
-  color: $color-primary-black;
-  text-shadow: 0 .1rem .3rem fade-out($color-primary-white, .2);
-  background-color: $color-primary-darker;
-}
-
-section.frontpage.main.links {
-  color: $color-primary-black;
-  text-shadow: 0 .1rem .3rem fade-out($color-primary-white, .2);
-  background-color: $color-primary-darker;
-}
-
-article.frontpage.main {
-    color: $color-primary-white;
-    text-shadow: 0 .1rem .3rem fade-out($color-primary-black, .2);
-    background-color: $color-primary-black;
 }
 

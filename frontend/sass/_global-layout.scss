@@ -55,6 +55,7 @@ header.main {
             }
 
             &.profiles {
+
                 @media (max-width: $width-media-medium - 1) {
                     display: none;
                 }
@@ -138,91 +139,6 @@ article.page {
     }
 }
 
-article.index {
-
-    article.post {
-
-        .container {
-            @include width-container;
-        }
-
-        header.post {
-            text-align: left;
-
-            .container {
-                padding-top: 2rem;
-                padding-bottom: 2rem;
-            }
-
-            h1 {
-                margin-top: 0;
-                margin-bottom: 0;
-            }
-
-            h2 {
-                margin-top: 0;
-                margin-bottom: 0;
-            }
-
-            time {
-                display: block;
-                margin-top: 1em;
-            }
-        }
-    }
-
-    footer.end.page {
-
-        .container {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-    }
-}
-
-header.frontpage.main {
-    padding: 12rem 0 10rem;
-    text-align: center;
-
-    h1 {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    h2 {
-        margin-top: .5em;
-        margin-bottom: 0;
-    }
-}
-
-section.frontpage.links.main {
-
-    .container {
-        @include width-container-wide;
-    }
-}
-
-article.frontpage.main {
-    margin: 0;
-
-    .container {
-        @include width-container;
-    }
-
-    section.page {
-        padding: 2rem 0;
-        text-align: center;
-
-        header.section {
-            padding: 2rem 0 0;
-        }
-    }
-}
-
-.home.frontpage > footer.main {
-    padding: 8rem 0 1rem;
-}
-
 section.page.blogs {
 
     ul {
@@ -236,15 +152,6 @@ section.page.blogs {
 
     @include width-container-wide;
     @include pie-clearfix;
-
-    @media (min-width: $width-media-medium) {
-
-        section.blogs.frontpage.latest,
-        section.blogs.frontpage.links {
-            width: 50%;
-            float: left;
-        }
-    }
 }
 
 section.page.blog {
